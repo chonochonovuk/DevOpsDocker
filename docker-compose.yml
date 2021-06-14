@@ -3,8 +3,6 @@ version: "3.7"
 services:
     bulphp:
         image: "bulphp:1.0"
-        deploy:
-          replicas: 3
         ports:
             - 8080:80
         volumes:
