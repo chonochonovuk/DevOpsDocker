@@ -4,7 +4,7 @@ services:
     bulphp:
         image: "bulphp:1.0"
         ports:
-            - 8080:80
+            - 80:80
         volumes:
             - "/vagrant/web:/var/www/html:ro"
         networks:
