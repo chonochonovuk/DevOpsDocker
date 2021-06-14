@@ -1,0 +1,29 @@
+version: "3.7"
+
+services:
+    bulphp:
+        image: "bulphp:1.0"
+        deploy:
+          replicas: 3
+        ports:
+            - 8080:80
+        volumes:
+            - "/vagrant/web:/var/www/html:ro"
+        networks:
+            - docker-network
+        depends_on:
+            - bulmysql
+        environment:
+            MYSQL_DATABASE: bulgaria
+            MYSQL_USER: web_user
+            MYSQL_PASSWORD: Password1
+
+    bulmysql:
+        image: "bulsql:1.0"
+        networks:
+            - docker-network
+        environment:
+            MYSQL_ROOT_PASSWORD: nE5kMc7JCGNqwDQN
+
+networks:
+    docker-network:
