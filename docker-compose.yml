@@ -6,7 +6,7 @@ services:
         ports:
             - 80:80
         volumes:
-            - "/vagrant/web:/var/www/html:ro"
+            - "/project/web:/var/www/html:ro"
         networks:
             - docker-network
         depends_on:
