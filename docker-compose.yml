@@ -3,11 +3,12 @@ version: "3.7"
 services:
     bulphp:
         image: "bulphp:1.0"
-        restart: always
         ports:
             - 80:80
         volumes:
             - "/project/web:/var/www/html:ro"
+        networks:
+            - bul-network
         depends_on:
             - bulmysql
         environment:
@@ -17,9 +18,10 @@ services:
 
     bulmysql:
         image: "bulsql:1.0"
-        restart: always
         environment:
             MYSQL_ROOT_PASSWORD: nE5kMc7JCGNqwDQN
-        ports:
-            - "3306"
+        networks:
+            - bul-network
 
+networks:
+    bul-network:
