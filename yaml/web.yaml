@@ -25,7 +25,7 @@ spec:
             value: web_user
             name: MYSQL_DATABASE
             value: bulgaria
-        - name: dob-php
+          name: dob-php
           image: chonochonov/dob-php:%IMAGE-PLACEHOLDER%
           volumeMounts:
           - mountPath: /var/www/html/
