@@ -11,14 +11,14 @@ resources:
 variables:
   # Container registry service connection established during pipeline creation
   dockerRegistryServiceConnection: '34b3faf6-1e83-4659-a8b2-56dce7c95511'
-  imageRepository: 'chonochonovukdevopsdocker'
+  imageRepository: 'bulphp'
   containerRegistry: 'chonotestacr.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/web/Dockerfile'
   tag: '$(Build.BuildId)'
   latestTag: '1.0'
 
   # Agent VM image name
-  vmImageName: 'bulphp'
+  vmImageName: 'ubuntu-latest'
 
 stages:
 - stage: Build
